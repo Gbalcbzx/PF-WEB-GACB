@@ -1,0 +1,10 @@
+<div class="container mt-5">
+  <h2>Series Populares</h2>
+  <div class="row row-cols-1 row-cols-md-6 g-4">
+    <div *ngFor="let serie of popularSeries" class="col animate__animated animate__fadeIn">
+      <div class="card h-100">
+        <img [src]="'https://image.tmdb.org/t/p/w500/' + serie.poster_path" class="card-img-top" [alt]="serie.name">
+      </div>
+    </div>
+  </div>
+</div>

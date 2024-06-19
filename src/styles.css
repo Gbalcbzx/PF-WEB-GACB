@@ -1,1 +1,42 @@
-/* You can add global styles to this file, and also import other style files */
+/* src/styles.css */
+body {
+  background-color: #000;
+  color: #fff;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.navbar, .container, .carousel, .card {
+  background-color: transparent;
+  color: white;
+}
+
+.navbar-nav .nav-link {
+  color: white !important;
+}
+
+.navbar-brand img {
+  height: 40px; /* Ajusta el tamaño de la imagen del logo */
+}
+
+.navbar-nav .nav-link:hover {
+  color: #b3b3b3 !important;
+}
+
+.carousel-caption h5, .carousel-caption p {
+  color: white;
+}
+
+.card {
+  background-color: #333;
+  border: none;
+}
+
+.card-title, .card-text, .list-group-item {
+  color: white;
+}
+
+.btn-primary {
+  background-color: #e50914;
+  border: none;
+}

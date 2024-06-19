@@ -1,0 +1,37 @@
+.navbar {
+  background-color: black;
+}
+.navbar-nav .nav-link {
+  color: white !important;
+}
+.navbar-brand img {
+  height: 40px; /* Ajusta el tamaño de la imagen del logo */
+}
+.navbar-nav .nav-link:hover {
+  color: #b3b3b3 !important;
+}
+
+
+.search-results {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: black;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.search-result {
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+}
+
+.search-result img {
+  width: 40px;
+  height: 40px;
+  margin-right: 8px;
+}

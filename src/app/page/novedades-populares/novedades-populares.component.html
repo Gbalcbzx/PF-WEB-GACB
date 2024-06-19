@@ -1,0 +1,45 @@
+<div id="movieCarousel" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img [src]="carouselImage" class="d-block w-100" [alt]="novedadesPeliculas[3]?.title">
+      <div class="carousel-caption d-none d-md-block">
+        <h1>{{ novedadesPeliculas[2]?.title }}</h1>
+        <p>{{ novedadesPeliculas[2]?.overview | slice:0:150 }}...</p>
+      </div>
+    </div>
+  </div>
+  <!-- <button class="carousel-control-prev" type="button" data-bs-target="#movieCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#movieCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button> -->
+</div>
+
+<div class="container mt-5">
+  <!-- Novedades de Películas -->
+  <div class="mb-4">
+    <h2>Novedades de Películas</h2>
+    <div class="row row-cols-1 row-cols-md-6 g-4">
+      <div *ngFor="let movie of novedadesPeliculas" class="col animateanimated animatefadeIn">
+        <div class="card h-100">
+          <img [src]="'https://image.tmdb.org/t/p/w500/' + movie.poster_path" class="card-img-top" [alt]="movie.title">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Novedades de Series -->
+  <div class="mb-4">
+    <h2>Novedades de Series</h2>
+    <div class="row row-cols-1 row-cols-md-6 g-4">
+      <div *ngFor="let series of novedadesSeries" class="col animateanimated animatefadeIn">
+        <div class="card h-100">
+          <img [src]="'https://image.tmdb.org/t/p/w500/' + series.poster_path" class="card-img-top" [alt]="series.name">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

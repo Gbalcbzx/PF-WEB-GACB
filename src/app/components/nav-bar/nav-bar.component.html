@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <a class="navbar-brand" routerLink="inicio">
+    <img src="assets/Multimedia/lg.jpg" alt="Netflix" style="height: 40px;">
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="inicio">Inicio</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="series">Series</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="novedades">Novedades Populares</a>
+      </li>
+    </ul>
+  </div>
+  <div class="ml-auto">
+    <input type="text" class="form-control" placeholder="Buscar..." (input)="onSearch($event)">
+    <!-- <a class="nav-link" href="#"><img src="assets/Multimedia/lupa.svg" alt="Lupa" style="height: 25px;"></a> -->
+  </div>
+
+  <div *ngIf="searchResults$ | async as results">
+    <div *ngIf="results.length > 0" class="search-results">
+      <div *ngFor="let result of results" class="search-result">
+        <img *ngIf="result.poster_path" [src]="'https://image.tmdb.org/t/p/w500/' + result.poster_path" [alt]="result.title">
+        <span>{{ result.title }}</span>
+      </div>
+    </div>
+    <div *ngIf="results.length === 0" class="search-results">
+      <div class="search-result">
+
+      </div>
+    </div>
+  </div>
+</nav>

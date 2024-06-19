@@ -1,0 +1,52 @@
+/* movies.component.css */
+body {
+  background-color: #000;
+  color: #fff;
+}
+.movie-slider img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+.card {
+  background-color: #333;
+  border: none;
+}
+.card-title, .card-text, .list-group-item {
+  color: white;
+}
+.btn-primary {
+  background-color: #e50914;
+  border: none;
+}
+
+/* src/styles.css */
+.carousel {
+  position: relative;
+}
+
+.carousel-item {
+  height: 100vh; /* Ajusta la altura del carrusel para que ocupe toda la pantalla */
+}
+
+.carousel-item img {
+  object-fit: cover;
+  height: 100vh; /* Asegura que la imagen cubra completamente el área del carrusel */
+}
+
+.carousel-caption {
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6); /* Fondo semitransparente para el texto */
+  padding: 20px; /* Añade un poco de espacio alrededor del texto */
+  color: #fff; /* Texto en color blanco */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Sombra ligera al texto */
+}
+
+.carousel-caption h1 {
+  font-size: 3rem; /* Tamaño de fuente grande para el título */
+  margin-bottom: 20px; /* Espacio entre el título y el párrafo */
+}
+
+.carousel-caption p {
+  font-size: 1.5rem; /* Tamaño de fuente para el párrafo */
+}
