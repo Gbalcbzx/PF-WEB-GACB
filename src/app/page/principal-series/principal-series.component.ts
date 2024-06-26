@@ -2,13 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { MoviesService } from '../../services/movies.service';
 import { CommonModule } from '@angular/common';
 import { SharedModule } from '../../shared/shared.module';
+import { MayusculasPipe } from "../../pipe/mayusculas.pipe";
 
 @Component({
-  selector: 'app-principal-series',
-  standalone: true,
-  imports: [CommonModule, SharedModule],
-  templateUrl: './principal-series.component.html',
-  styleUrl: './principal-series.component.css'
+    selector: 'app-principal-series',
+    standalone: true,
+    templateUrl: './principal-series.component.html',
+    styleUrl: './principal-series.component.css',
+    imports: [CommonModule, SharedModule, MayusculasPipe]
 })
 export class PrincipalSeriesComponent implements OnInit {
   seriesPopulares: any[] = [];

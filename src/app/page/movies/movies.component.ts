@@ -1,16 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { MoviesService } from '../../services/movies.service';
 import { CommonModule } from '@angular/common';
-import { Route, Router } from '@angular/router';
+import { Route, Router, RouterLink } from '@angular/router';
 import { SeriesComponent } from '../series/series.component';
+import { MayusculasPipe } from "../../pipe/mayusculas.pipe";
 
 
 @Component({
-  selector: 'app-movies',
-  standalone: true,
-  imports: [CommonModule, SeriesComponent],
-  templateUrl: './movies.component.html',
-  styleUrl: './movies.component.css'
+    selector: 'app-movies',
+    standalone: true,
+    templateUrl: './movies.component.html',
+    styleUrl: './movies.component.css',
+    imports: [CommonModule, SeriesComponent, MayusculasPipe, RouterLink]
 })
 export class MoviesComponent implements OnInit {
   popularMovies: any[] = [];

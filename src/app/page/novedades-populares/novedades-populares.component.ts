@@ -2,14 +2,15 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { MoviesService } from '../../services/movies.service';
 import { SharedModule } from '../../shared/shared.module';
+import { MayusculasPipe } from "../../pipe/mayusculas.pipe";
 
 
 @Component({
-  selector: 'app-novedades-populares',
-  standalone: true,
-  imports: [CommonModule, SharedModule],
-  templateUrl: './novedades-populares.component.html',
-  styleUrl: './novedades-populares.component.css'
+    selector: 'app-novedades-populares',
+    standalone: true,
+    templateUrl: './novedades-populares.component.html',
+    styleUrl: './novedades-populares.component.css',
+    imports: [CommonModule, SharedModule, MayusculasPipe]
 })
 export class NovedadesPopularesComponent implements OnInit {
   novedadesPeliculas: any[] = [];

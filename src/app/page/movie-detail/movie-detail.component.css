@@ -1,32 +1,45 @@
-/* src/app/movie-detail/movie-detail.component.css */
-.container {
-  margin-top: 50px;
-}
-
-.img-fluid {
+.movie-poster {
+  border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-h1 {
+.movie-title {
   font-size: 2.5rem;
-  margin-bottom: 20px;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
 }
 
-.lead {
-  font-size: 1.2rem;
-  margin-bottom: 20px;
+.movie-tagline {
+  font-style: italic;
+  color: #666;
+  margin-bottom: 1rem;
 }
 
-.list-group-item {
-  font-size: 1rem;
+.movie-overview {
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
 }
 
-.btn-primary {
-  background-color: #007bff;
-  border-color: #007bff;
+.movie-details li {
+  margin-bottom: 0.5rem;
 }
 
-.btn-primary:hover {
-  background-color: #0056b3;
-  border-color: #0056b3;
+.trailer-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  height: 0;
+  overflow: hidden;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.trailer-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }

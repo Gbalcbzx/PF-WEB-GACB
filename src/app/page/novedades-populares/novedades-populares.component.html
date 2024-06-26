@@ -3,7 +3,7 @@
     <div class="carousel-item active">
       <img [src]="carouselImage" class="d-block w-100" [alt]="novedadesPeliculas[3]?.title">
       <div class="carousel-caption d-none d-md-block">
-        <h1>{{ novedadesPeliculas[2]?.title }}</h1>
+        <h1>{{ novedadesPeliculas[2]?.title | mayusculas }}</h1>
         <p>{{ novedadesPeliculas[2]?.overview | slice:0:150 }}...</p>
       </div>
     </div>

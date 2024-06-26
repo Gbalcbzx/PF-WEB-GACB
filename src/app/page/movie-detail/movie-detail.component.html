@@ -1,33 +1,31 @@
-<div *ngIf="movie" class="container my-5">
+<div class="container mt-5" *ngIf="movie">
   <div class="row">
     <div class="col-md-4">
-      <img [src]="'https://image.tmdb.org/t/p/w500/' + movie.poster_path" class="img-fluid rounded-3 shadow-lg" alt="{{ movie.title }}">
+      <img [src]="'https://image.tmdb.org/t/p/w500/' + movie.poster_path" class="img-fluid movie-poster" [alt]="movie.title">
     </div>
     <div class="col-md-8">
-      <h1 class="mb-4">{{ movie.title }}</h1>
-      <p class="lead">{{ movie.overview }}</p>
-      <div class="d-flex justify-content-between align-items-center mb-4">
-        <ul class="list-group list-group-horizontal">
-          <li class="list-group-item bg-transparent border-0"><i class="fas fa-calendar-alt me-2"></i>{{ movie.release_date }}</li>
-          <li class="list-group-item bg-transparent border-0"><i class="fas fa-star me-2"></i>{{ movie.vote_average }}</li>
-        </ul>
-        <button class="btn btn-primary" (click)="goBack()">
-          <i class="fas fa-arrow-left me-2"></i>Back to Movies
-        </button>
-      </div>
-      <div class="row">
-        <div class="col-md-6 mb-3">
-          <h5>Genres</h5>
-          <ul class="list-unstyled">
-            <li *ngFor="let genre of movie.genres">{{ genre.name }}</li>
-          </ul>
-        </div>
-        <div class="col-md-6 mb-3">
-          <h5>Production Companies</h5>
-          <ul class="list-unstyled">
-            <li *ngFor="let company of movie.production_companies">{{ company.name }}</li>
-          </ul>
-        </div>
+      <h1 class="movie-title">{{ movie.title | mayusculas }}</h1>
+      <p class="movie-tagline">{{ movie.tagline }}</p>
+      <p class="movie-overview">{{ movie.overview }}</p>
+      <ul class="list-unstyled movie-details">
+        <li><strong>Fecha de estreno:</strong> {{ movie.release_date | date }}</li>
+        <li><strong>Género:</strong> {{ getGenres() }}</li>
+        <li><strong>Duración:</strong> {{ movie.runtime }} minutos</li>
+        <li><strong>Puntuación:</strong> {{ movie.vote_average }} / 10</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row mt-5" *ngIf="trailerUrl">
+    <div class="col-12 text-center">
+      <h2 class="mb-4">Trailer</h2>
+      <div class="trailer-container">
+        <iframe
+          [src]="trailerUrl"
+          frameborder="0"
+          allow="autoplay; encrypted-media"
+          allowfullscreen>
+        </iframe>
       </div>
     </div>
   </div>

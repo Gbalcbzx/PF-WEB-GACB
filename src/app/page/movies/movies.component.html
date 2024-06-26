@@ -4,19 +4,11 @@
     <div class="carousel-item active">
       <img [src]="carouselImage" class="d-block w-100" [alt]="popularMovies[1]?.title">
       <div class="carousel-caption d-none d-md-block">
-        <h1>{{ popularMovies[1]?.title }}</h1>
+        <h1>{{ popularMovies[1]?.title | mayusculas }}</h1>
         <p>{{ popularMovies[1]?.overview | slice:0:150 }}...</p>
       </div>
     </div>
   </div>
-  <!-- <button class="carousel-control-prev" type="button" data-bs-target="#movieCarousel" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#movieCarousel" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button> -->
 </div>
 
 <div class="container mt-5">
@@ -25,7 +17,7 @@
     <h2>Popular</h2>
     <div class="row row-cols-1 row-cols-md-6 g-4">
       <div *ngFor="let movie of popularMovies" class="col animate__animated animate__fadeIn">
-        <div class="card h-100">
+        <div class="card h-100" [routerLink]="['/movie', movie.id]" style="cursor: pointer;">
           <img [src]="'https://image.tmdb.org/t/p/w500/' + movie.poster_path" class="card-img-top" [alt]="movie.title">
         </div>
       </div>
@@ -39,7 +31,7 @@
     <h2>En Cartelera</h2>
     <div class="row row-cols-1 row-cols-md-6 g-4">
       <div *ngFor="let movie of nowPlayingMovies" class="col animate__animated animate__fadeIn">
-        <div class="card h-100">
+        <div class="card h-100" [routerLink]="['/movie', movie.id]" style="cursor: pointer;">
           <img [src]="'https://image.tmdb.org/t/p/w500/' + movie.poster_path" class="card-img-top" [alt]="movie.title">
         </div>
       </div>
@@ -51,7 +43,7 @@
     <h2>Mejor Puntuadas</h2>
     <div class="row row-cols-1 row-cols-md-6 g-4">
       <div *ngFor="let movie of topRatedMovies" class="col animate__animated animate__fadeIn">
-        <div class="card h-100">
+        <div class="card h-100" [routerLink]="['/movie', movie.id]" style="cursor: pointer;">
           <img [src]="'https://image.tmdb.org/t/p/w500/' + movie.poster_path" class="card-img-top" [alt]="movie.title">
         </div>
       </div>
@@ -63,7 +55,7 @@
     <h2>Próximas</h2>
     <div class="row row-cols-1 row-cols-md-6 g-4">
       <div *ngFor="let movie of upcomingMovies" class="col animate__animated animate__fadeIn">
-        <div class="card h-100">
+        <div class="card h-100" [routerLink]="['/movie', movie.id]" style="cursor: pointer;">
           <img [src]="'https://image.tmdb.org/t/p/w500/' + movie.poster_path" class="card-img-top" [alt]="movie.title">
         </div>
       </div>
@@ -75,22 +67,11 @@
     <h2>Tendencias</h2>
     <div class="row row-cols-1 row-cols-md-6 g-4">
       <div *ngFor="let movie of trendingMovies" class="col animate__animated animate__fadeIn">
-        <div class="card h-100">
+        <div class="card h-100" [routerLink]="['/movie', movie.id]" style="cursor: pointer;">
           <img [src]="'https://image.tmdb.org/t/p/w500/' + movie.poster_path" class="card-img-top" [alt]="movie.title">
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Latest Movie -->
-  <!-- <div class="mb-4">
-    <h2>Última Película</h2>
-    <div class="card h-100 animate__animated animate__fadeIn">
-      <img [src]="'https://image.tmdb.org/t/p/w500/' + latestMovie.poster_path" class="card-img-top" [alt]="latestMovie.title">
-      <div class="card-body">
-        <h5 class="card-title">{{ latestMovie.title }}</h5>
-        <p class="card-text">{{ latestMovie.overview }}</p>
-      </div>
-    </div>
-  </div> -->
 </div>
