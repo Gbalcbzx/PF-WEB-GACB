@@ -17,7 +17,10 @@ export class NavBarComponent {
   searchResults$: Observable<MovieResult[]>;
   private searchTerms = new Subject<string>();
 
-  constructor(private moviesService: MoviesService) {
+  constructor(
+    private moviesService: MoviesService,
+    private router: Router
+  ) {
     this.searchResults$ = this.searchTerms.pipe(
       debounceTime(300),
       distinctUntilChanged(),
@@ -30,4 +33,9 @@ export class NavBarComponent {
     this.searchTerms.next(searchTerm);
   }
 
+  goToMovieDetails(movieId: number) {
+    this.router.navigate(['/movie', movieId]);
+    // Limpia la búsqueda después de navegar
+    this.searchTerms.next('');
+  }
 }

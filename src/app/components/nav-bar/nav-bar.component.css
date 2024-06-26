@@ -24,14 +24,20 @@
   overflow-y: auto;
 }
 
-.search-result {
-  display: flex;
-  align-items: center;
-  padding: 8px 16px;
-}
 
 .search-result img {
   width: 40px;
   height: 40px;
   margin-right: 8px;
+}
+
+
+.search-result {
+  cursor: pointer;
+  padding: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.search-result:hover {
+  background-color: rgba(255, 255, 255, 0.1);
 }

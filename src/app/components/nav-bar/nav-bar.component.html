@@ -25,7 +25,7 @@
 
   <div *ngIf="searchResults$ | async as results">
     <div *ngIf="results.length > 0" class="search-results">
-      <div *ngFor="let result of results" class="search-result">
+      <div *ngFor="let result of results" class="search-result" (click)="goToMovieDetails(result.id)">
         <img *ngIf="result.poster_path" [src]="'https://image.tmdb.org/t/p/w500/' + result.poster_path" [alt]="result.title">
         <span>{{ result.title }}</span>
       </div>
